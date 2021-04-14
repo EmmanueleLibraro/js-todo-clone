@@ -39,7 +39,33 @@ $('document').ready(function(){
     }
 
     //NUOVO IMPUT
-    
+    nuovoImput.keyup(function(e){
+        if(e.which === 13){
+            console.log(e.which);
+            var text = nuovoImput.val().trim();
+
+            if(text !== ""){      //SERVE PER EVITARE CHE SCRIVANO COSE TIPO CON SPAZIO O VIRGOLETTE E INVIANO
+
+                //template
+                var item = template.clone();
+                item.find(".text").text(text);
+                list.append(item);
+
+                //RESET
+                nuovoImput.val("");    //SERVE PER LA PULIZIA
+            }
+        }
+    });
+
+    //RIMOZIONE TODO
+    $("body").on("click", ".todos li i ", function(){
+        $(this).parent().remove();                          //SERVE PER ELIMINARE I TODO AGGIUNTI NUOVI
+    });
+
+    //TODO FATTO OPPURE NO
+    $("body").on("click", "todos li span", function(){
+        $(this).toggleClass("completed");
+    });
 
     //END DOC READY
 });

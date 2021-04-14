@@ -63,3 +63,8 @@ main .aggiungere-todo:focus{
 .todos li i:hover{
     opacity: 1;
 }
+
+/* SETTARE SE I TODO SONO FATTI OPPURE NO */
+.todos li span.completed{
+    text-decoration: line-through;
+}
