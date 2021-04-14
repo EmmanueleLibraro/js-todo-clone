@@ -59,7 +59,7 @@ $('document').ready(function(){
 
     //RIMOZIONE TODO
     $("body").on("click", ".todos li i ", function(){
-        $(this).parent().remove();                          //SERVE PER ELIMINARE I TODO AGGIUNTI NUOVI
+        $(this).parent().remove();                          //SERVE PER ELIMINARE I TODO NUOVI AGGIUNTI
     });
 
     //TODO FATTO OPPURE NO
